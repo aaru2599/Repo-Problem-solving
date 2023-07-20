@@ -18,7 +18,7 @@ function longestWordInString(input) {
         }
     }
 
-    return `Longest Word is:- ${longestWord}`;
+    return  longestWord;
 }
 
 console.log(longestWordInString("My Name is Arvind and I'm from Chhindwara"));
