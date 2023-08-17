@@ -33,19 +33,17 @@ var findKthLargest = function (nums, k) {
                 }
             }
 
-            for (let i = 0; i < nums.length; i++) {
-                if (nums[i] === max) {
-                    nums[i] = null; 
-                    break; 
-                }
-            }
+            const index = nums.indexOf(max);
+            // nums.splice(index, 1); 
+            nums[index]=null
         }
 
-        let kthMax = max;
-        return kthMax;
+        
+        return max;
     }
 }
 
-const nums = [-1, 2, 0];
+const nums =
+[-3858,-536,3182,5894,4366,9983,8440,2314,4264,-1169,4047,-7462,5345,-1731,-2497,-2576,8459,-5433,7300,5924,-2342,-7517,5061,-9984,4186,-1527,-5492,6967,1772,-6623,5629,2778,-1313,4403,6419,-1094,1426,-1566,1063,-7225,3262,-2211,-9285,-3245,-2364,3862,-337,-8012,-6620,7491,6256,-7364,9256,4563,-5225,-4012,1072,-391,-8543]
 const k = 3;
 console.log(findKthLargest(nums, k));
