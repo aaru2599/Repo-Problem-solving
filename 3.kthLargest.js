@@ -13,47 +13,39 @@
         (in every loop till kth iteration wherever max value is present replace with null) 
     step6:after that simply return kth max value    
 */
-
-
 var findKthLargest = function (nums, k) {
-    if((nums.length==k)&&(nums[0]&&nums[1])==-1){
-        return -1;
-    }
-     if((k==1)&&(nums.length==1)){
-        return 1
+    if ((k == 1) && (nums.length == 1)) {
+        return nums[0]; // Return the only element when k and array length are both 1
     }
     if (k <= 0 || k > nums.length) {
-       return 0;
+        return 0; 
     } else {
         let max = 0;
 
         for (let i = 0; i < k; i++) {
-         max = Number.MIN_VALUE;
+            max = Number.MIN_SAFE_INTEGER; 
 
-           
             for (let j = 0; j < nums.length; j++) {
                 if (nums[j] !== null) {
-                    if (nums[j] > max) 
-                     max = nums[j];
+                    if (nums[j] > max) {
+                        max = nums[j];
+                    }
                 }
             }
-
 
             for (let i = 0; i < nums.length; i++) {
                 if (nums[i] === max) {
-                    // nums.splice(i,1)// Remove the largest element from the array
-                    nums[i] = null//
-                    break;
-
+                    nums[i] = null; 
+                    break; 
                 }
             }
         }
-        
-        return max
+
+        let kthMax = max;
+        return kthMax;
     }
 }
-const arr=[3,2,3,1,2,4,5,5,6]
-const k=4
-console.log(findKthLargest(arr,k));
 
-
+const nums = [-1, 2, 0];
+const k = 3;
+console.log(findKthLargest(nums, k));
