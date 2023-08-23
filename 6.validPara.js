@@ -1,3 +1,18 @@
+/**
+ * 
+ * @param {*} s 
+ * @returns 
+ * step1:we have to convert string into array
+ * step2:check if length or array is odd then its not a valid paranthesis
+ * step3:else we iterate the array and check if element is match with "(","["and "{"
+ *          then we will push the elements into the new array 
+ * step4:we will store  the last element into a variable 
+ *        after that we will check if that element is our given paranthesis and the emidiate next is matching 
+ *          with ")","}"and "]" then remove the last element
+ * Step5:if there is not any element in new array then return true
+ */
+
+
 var isValid = function (s) {
     let arr = s.split("");
     let newArr = [];
@@ -33,5 +48,5 @@ var isValid = function (s) {
 
 };
 
-const input = "[]()";
+const input = "[()";
 console.log(isValid(input)); // Output: true
