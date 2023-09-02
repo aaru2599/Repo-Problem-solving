@@ -5,20 +5,21 @@
  * @returns 
  * 
  */
-let reverseNum = (num, uName) => {
+let reverseString = (num, uName) => {
     let str = "";
     if (num < 0) {
         return "";
     }
     else {
         str = str + uName[num]
-        return str + reverseNum(num - 1, uName)
+        return str + reverseString(num - 1, uName)
         // return uName[num] + reverseNum(num - 1, uName)
     }
 }
 const uName = "Arvind"
 let len = uName.length
-console.log(reverseNum(len - 1, uName));
+console.log(reverseString(len - 1, uName));
+
 
 
 
